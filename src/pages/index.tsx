@@ -1,7 +1,12 @@
+import Layout from "@/components/Layout/Layout";
 import Home from "@/components/screens/Home/Home";
 
 export default function HomePage() {
-  return <Home />;
+  return (
+    <Layout>
+      <Home />
+    </Layout>
+  );
 }
 
 // 📌 Next.js example
