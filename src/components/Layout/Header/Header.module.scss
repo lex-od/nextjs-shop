@@ -1,4 +1,17 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
 .nav {
   display: flex;
   gap: 15px;
+
+  a {
+    &:hover,
+    &:focus,
+    &.current {
+      color: orangered;
+    }
+  }
 }

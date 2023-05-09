@@ -1,13 +1,16 @@
+import { NextPage } from "next";
 import Layout from "@/components/Layout/Layout";
 import Home from "@/components/screens/Home/Home";
 
-export default function HomePage() {
+const HomePage: NextPage = () => {
   return (
     <Layout>
       <Home />
     </Layout>
   );
-}
+};
+
+export default HomePage;
 
 // 📌 Next.js example
 
