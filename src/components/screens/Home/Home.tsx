@@ -1,8 +1,17 @@
-import React from "react";
 import css from "./Home.module.scss";
+import { StoreService } from "@/services/StoreService";
 
 const Home = () => {
-  return <main>Home</main>;
+  return (
+    <main
+      onClick={() => {
+        StoreService.getSingleProduct({ id: 23 });
+        // StoreService.getAllProducts();
+      }}
+    >
+      Home
+    </main>
+  );
 };
 
 export default Home;

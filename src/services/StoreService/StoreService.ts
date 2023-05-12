@@ -1,0 +1,13 @@
+import axios from "axios";
+import { IStoreService } from "./StoreService.interface";
+
+axios.defaults.baseURL = "https://api.escuelajs.co/api";
+
+export const StoreService: IStoreService = {
+  getAllProducts({ offset = 0 } = {}) {
+    return axios.get("/v1/products", { params: { limit: 20, offset } });
+  },
+  getSingleProduct({ id }) {
+    return axios.get(`/v1/products/${id}`);
+  },
+};
