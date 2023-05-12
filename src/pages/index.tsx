@@ -1,13 +1,22 @@
 import { NextPage } from "next";
 import Layout from "@/components/Layout/Layout";
 import Home from "@/components/screens/Home/Home";
+import { IHome } from "@/components/screens/Home/Home.interface";
 import Meta from "@/components/seo/Meta/Meta";
 
-const HomePage: NextPage = () => {
+export function getStaticProps() {
+  return {
+    props: {
+      products: [],
+    },
+  };
+}
+
+const HomePage: NextPage<IHome> = ({ products }) => {
   return (
     <Meta title="Home" description="Home description">
       <Layout>
-        <Home />
+        <Home products={products} />
       </Layout>
     </Meta>
   );
@@ -15,7 +24,7 @@ const HomePage: NextPage = () => {
 
 export default HomePage;
 
-// 📌 Next.js example
+// === Next.js example ===
 
 // import Head from "next/head";
 // import Image from "next/image";

@@ -1,16 +1,16 @@
 import { NextPage } from "next";
 import Layout from "@/components/Layout/Layout";
-import Product from "@/components/screens/Product/Product";
+import SingleProduct from "@/components/screens/SingleProduct/SingleProduct";
 import Meta from "@/components/seo/Meta/Meta";
 
-const ProductPage: NextPage = () => {
+const SingleProductPage: NextPage = () => {
   return (
     <Meta title="Product name" description="Product description">
       <Layout>
-        <Product />
+        <SingleProduct />
       </Layout>
     </Meta>
   );
 };
 
-export default ProductPage;
+export default SingleProductPage;

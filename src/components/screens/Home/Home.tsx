@@ -1,7 +1,10 @@
-import css from "./Home.module.scss";
+import { FC } from "react";
 import { StoreService } from "@/services/StoreService";
+import css from "./Home.module.scss";
+import { IHome } from "./Home.interface";
+import ProductItem from "./ProductItem/ProductItem";
 
-const Home = () => {
+const Home: FC<IHome> = ({ products }) => {
   return (
     <main
       onClick={() => {
@@ -9,7 +12,17 @@ const Home = () => {
         // StoreService.getAllProducts();
       }}
     >
-      Home
+      <h1>Welcome to Next.js Shop</h1>
+
+      {!products.length && <b>Products not found</b>}
+
+      {!!products.length && (
+        <ul>
+          {products.map((product) => (
+            <ProductItem key={product.id} product={product} />
+          ))}
+        </ul>
+      )}
     </main>
   );
 };
