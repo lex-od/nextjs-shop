@@ -29,6 +29,6 @@ export type TGetAllProductsResponse = IProductItem[];
 
 // getSingleProduct
 export interface IGetSingleProductParams {
-  id: number;
+  id: number | string;
 }
 export type TGetSingleProductResponse = IProductItem;

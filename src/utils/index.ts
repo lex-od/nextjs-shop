@@ -1,0 +1,1 @@
+export { getIsValidImage } from "./getIsValidImage";

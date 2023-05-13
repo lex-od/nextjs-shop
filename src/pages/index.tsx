@@ -1,16 +1,26 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Layout from "@/components/Layout/Layout";
 import Home from "@/components/screens/Home/Home";
 import { IHome } from "@/components/screens/Home/Home.interface";
 import Meta from "@/components/seo/Meta/Meta";
+import { StoreService } from "@/services/StoreService";
 
-export function getStaticProps() {
+export const getStaticProps: GetStaticProps<IHome> = async () => {
+  const { data } = await StoreService.getAllProducts();
+
   return {
-    props: {
-      products: [],
-    },
+    props: { products: data },
+    revalidate: 30,
   };
-}
+};
+
+// export const getServerSideProps: GetServerSideProps<IHome> = async () => {
+//   const { data } = await StoreService.getAllProducts();
+
+//   return {
+//     props: { products: data },
+//   };
+// };
 
 const HomePage: NextPage<IHome> = ({ products }) => {
   return (
