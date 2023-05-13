@@ -27,7 +27,6 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 export const getStaticProps: GetStaticProps<ISingleProduct, Params> = async ({
   params,
 }) => {
-  console.log(params);
   const { data } = await StoreService.getSingleProduct({
     id: params?.id as string,
   });
