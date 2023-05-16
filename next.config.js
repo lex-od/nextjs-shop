@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    STORE_SERVICE_URL: "https://api.escuelajs.co/api",
+  },
   images: {
     remotePatterns: [
       {

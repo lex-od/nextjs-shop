@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IStoreService } from "./StoreService.interface";
 
-axios.defaults.baseURL = "https://api.escuelajs.co/api";
+axios.defaults.baseURL = process.env.STORE_SERVICE_URL;
 
 export const StoreService: IStoreService = {
   getAllProducts({ offset = 0 } = {}) {
