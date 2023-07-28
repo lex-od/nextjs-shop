@@ -11,20 +11,15 @@ const SingleProduct: FC<ISingleProduct> = ({ product }) => {
 
   return (
     <main>
-      {/* <Image
-        src={isImage ? product.images[0] : noImage}
-        alt={product.title}
-        width={320}
-        height={320}
-        priority
-      /> */}
       <div className={css.wrapper}>
         <Image
-          src={noImage}
-          alt="No image"
-          quality={100}
-          fill
-          sizes="(min-width: 769px) 400px, 200px"
+          src={isImage ? product.images[0] : noImage}
+          alt={product.title}
+          priority
+          width={320}
+          height={320}
+          // fill
+          // sizes="(min-width: 769px) 400px, 200px"
         />
       </div>
       <h1>{product.title}</h1>
